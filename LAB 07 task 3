@@ -1,0 +1,66 @@
+#include <stdio.h>
+int main(){
+    int a,b,sump=0,countp=0,sumf=0,countf=0;
+    float averagep=0,averagef=0;
+    printf("Enter the number of Students in the class :");
+    scanf("%d",&a);
+    int pass[a],fail[a];
+    for (int i = 0; i < a; i++)
+    {
+    pass[i] = 0;
+    fail[i] = 0;
+    }
+    for (int i=0;i<a;i++)
+    {
+        printf("\nEnter the marks of students %d :",(i+1));
+        scanf("%d",&b);
+        if (b>5 && b<=10)
+        {
+            pass[i]=b;
+        }
+        else if (b<=5 && b>=0)
+        {
+            fail[i]=b;
+        }
+        else if (b>10)
+        {
+            printf("\nMarks have exceeded the total marks.\n");
+            i--;
+            continue;
+        }
+        else 
+        break;
+    } 
+    printf("\n----PASSED STUDENTS SUMMARY----");
+    for (int j=0;j<a;j++)
+    {
+        if (pass[j]!=0){
+        printf("\nThe marks of Students %d is :%d",(j+1),pass[j]);
+        sump+=pass[j];
+        countp++;
+        }
+    }
+    if (countp > 0){
+    averagep = (float)sump / countp;
+    printf("\nThe Average of passed students are :%.2f",averagep);}
+    else
+    printf("\nNo passed students to calculate average.");
+    
+    printf("\n----FAILED STUDENTS SUMMARY----");
+    for (int k=0;k<a;k++)
+    {
+        if (fail[k]!=0){
+        printf("\nThe marks of Students %d is :%d",(k+1),fail[k]);
+        sumf+=fail[k];
+        countf++;
+        }
+    }
+    if (countf > 0){
+    averagef = (float)sumf / countf;
+    printf("\nThe Average of failed students are :%.2f",averagef);}
+    else
+    printf("\nNo failed students to calculate average.");
+    return 0;
+}
+
+
