@@ -18,3 +18,4 @@ int main(){
 	printf("The number %d occured %d times",a,count);
 	return 0;
 }
+
