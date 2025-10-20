@@ -1,0 +1,24 @@
+#include <stdio.h>
+int main(){
+    int vcount=0,ccount=0,isvowel;
+    char word[20];
+    char vowel[10]={'a','e','i','o','u','A','E','I','O','U'};
+    printf("Enter the Word :");
+    scanf(" %s",word);
+    for (int i=0;word[i]!='\0';i++){
+        isvowel=0;
+        for (int j=0;j<10;j++){
+        if (word[i]==vowel[j]){
+            vcount+=1;
+            isvowel=1;
+            break;
+        }
+        }
+        if (isvowel==0){
+            ccount+=1;
+        }
+   
+    }
+    printf("The number of Vowels in the word is %d and consonents are %d",vcount,ccount);
+    return 0;
+}
