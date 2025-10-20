@@ -1,0 +1,12 @@
+#include <stdio.h>
+
+int main() {
+    char nonalpha[100];
+
+    printf("Enter non-alphabetic characters: ");
+    scanf(" %[^A-Za-z]", nonalpha);
+
+    printf("You entered: %s\n", nonalpha);
+
+    return 0;
+}
